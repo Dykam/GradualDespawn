@@ -1,0 +1,12 @@
+safe-mob-kill: [killall,butcher,ebutcher,ekillall,mobkill,emobkill] # Commands to override to create a safe mobkill command which respects persistent mobs.]
+show-messages: false # Show how many mobs where killed in each world
+global:
+    interval: 6000 # Time in ticks between checking for entities despawning
+    max-age: 24000 # How long a mob will live before it is removed when checked.
+    immitate-natural-despawn: true # Whether it should respect mobs not despawning when for example named.
+worlds: # example config
+    example world:
+        interval: 6000 # Time in ticks between checking for entities despawning
+        max-age: 24000 # How long a mob will live before it is removed when checked.
+        immitate-natural-despawn: true # Whether it should respect mobs not despawning when for example named.
+    example creative: false # this is how you disable it for a world. If you leave out global this is unecessary.

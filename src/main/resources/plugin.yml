@@ -1,0 +1,33 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+main: ${plugin.mainClass}
+commands:
+  gradualdespawn:
+    aliases: [gd]
+    description: Change GradualDespawnPlugin settings or view statistics.
+    permission: gradualdespawn.command
+    usage: |
+        Usage: /<command>
+          reload§7 -- Reloads configuration for GradualDespawn
+permissions:
+    gradualdespawn.*:
+        description: Give access to most GradualDespawnPlugin commands.
+        children:
+            gradualdespawn.statistics: true
+            gradualdespawn.setup: true
+            gradualdespawn.reload: true
+        default: op
+    gradualdespawn.statistics:
+        description: Whether a player can view statistics.
+        children:
+            gradualdespawn.command: true
+        default: op
+    gradualdespawn.reload:
+        description: Whether a player can reload GradualDespawnPlugin.
+        children:
+            gradualdespawn.command: true
+        default: op
+    gradualdespawn.command:
+        description: Unlocks /gradualdespawn
+        default: op
